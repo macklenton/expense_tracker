@@ -95,3 +95,58 @@ function loadExpenses() {
 
 }
 
+function displayExpenses(expenses) {
+    expenseList.innerHTML = "";
+    if (expenses.length === 0) {
+
+        const message = document.createElement("p");
+
+        message.id = "empty-state";
+
+        message.textContent = "No expenses added yet.";
+
+        expenseList.appendChild(message);
+
+        return;
+
+    }
+
+    expenses.map(({ id, description, amount, category }) => {
+        
+        const expenseItem = document.createElement("div");
+
+        expenseItem.classList.add("expense-item");
+        
+        const details = document.createElement("div");
+
+        const title = document.createElement("h3");
+        title.textContent = description;
+
+        const categoryText = document.createElement("p");
+        categoryText.textContent = category;
+        details.append(title, categoryText);
+       
+        const actions = document.createElement("div");
+        actions.classList.add("expense-actions");
+        const price = document.createElement("p");
+        price.textContent = `KES ${amount.toFixed(2)}`;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.classList.add("delete-button");
+
+
+        deleteButton.addEventListener("click", () => {
+            tracker.removeExpense(id);
+            saveExpenses();
+            updateDisplay();
+
+        });      
+        actions.append(price, deleteButton);
+        expenseItem.append(details, actions);
+        expenseList.appendChild(expenseItem);
+
+    });
+
+}
+
