@@ -1,43 +1,5 @@
-class Expense {
-    constructor(description, amount, category) {
-        this.id = Date.now() + Math.random();
-        this.description = description;
-        this.amount = Number(amount);
-        this.category = category;
-    }
-}
-
-class ExpenseTracker {
-    constructor() {
-        this.expenses = [];
-    }
-
-    addExpense(expense) {
-        this.expenses = [...this.expenses, expense];
-    }
-
-    addExpenses(...expenses) {
-        this.expenses = [...this.expenses, ...expenses];
-    }
-
-    removeExpense(id) {
-        this.expenses = this.expenses.filter(expense => expense.id !== id);
-    }
-
-    getExpenses() {
-        return [...this.expenses];
-    }
-
-    filterByCategory(category) {
-        return this.expenses.filter(expense => expense.category === category);
-    }
-
-    calculateTotal() {
-        return this.expenses.reduce((total, expense) => {
-            return total + expense.amount;
-        }, 0);
-    }
-}
+import Expense from "./src/Expense.js";
+import ExpenseTracker from "./src/ExpenseTracker.js";
 
 const tracker = new ExpenseTracker();
 
