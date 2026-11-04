@@ -21,4 +21,18 @@ describe("ExpenseTracker Tests", () => {
         expect(tracker.getExpenses()[0].amount).toBe(500);
     });
 
+    test("should remove an expense", () => {
+
+        const expense1 = new Expense("Lunch", 500, "Food");
+        const expense2 = new Expense("Bus fare", 200, "Transport");
+
+        tracker.addExpenses(expense1, expense2);
+
+        tracker.removeExpense(expense1.id);
+
+        expect(tracker.getExpenses()).toHaveLength(1);
+        expect(tracker.getExpenses()[0].description).toBe("Bus fare");
+    });
+
+
 });
