@@ -169,4 +169,32 @@ function updateDisplay() {
 
 }
 
+expenseForm.addEventListener("submit", function(event) {
 
+    event.preventDefault();
+    const description = descriptionInput.value.trim();
+    const amount = Number(amountInput.value);
+    const category = categoryInput.value;
+
+
+    if (
+        description === "" ||
+        category === "" ||
+        !Number.isFinite(amount) ||
+        amount <= 0
+
+    ) {
+        alert("Please enter valid expense details.");
+        return;
+
+    }
+    const expense = new Expense(description, amount, category);
+
+
+    tracker.addExpense(expense);
+    saveExpenses();
+    expenseForm.reset();
+    categoryFilter.value = "All";
+    updateDisplay();
+
+});
