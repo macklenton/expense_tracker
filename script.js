@@ -61,3 +61,7 @@ class ExpenseTracker {
     }
 
 }
+function saveExpenses() {
+    localStorage.setItem("expenses", JSON.stringify(tracker.getExpenses()));
+
+}
