@@ -65,3 +65,33 @@ function saveExpenses() {
     localStorage.setItem("expenses", JSON.stringify(tracker.getExpenses()));
 
 }
+function loadExpenses() {
+    try {
+
+        const savedExpenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+        
+        if (!Array.isArray(savedExpenses)) {
+            return;
+        }
+        const expenses = savedExpenses.map(expense => {
+            const { id, description, amount, category } = expense;
+
+            const newExpense = new Expense(description, amount, category);
+            newExpense.id = id;
+
+            return newExpense;
+
+        });
+
+        // Add all retrieved expenses to the tracker.
+        tracker.addExpenses(...expenses);
+
+    } catch (error) {
+
+        console.error("Error loading expenses:", error);
+
+    }
+
+}
+
