@@ -198,3 +198,13 @@ expenseForm.addEventListener("submit", function(event) {
     updateDisplay();
 
 });
+
+categoryFilter.addEventListener("change", function() {
+
+    updateDisplay();
+
+});
+
+loadExpenses();
+
+updateDisplay();
