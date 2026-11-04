@@ -150,3 +150,23 @@ function displayExpenses(expenses) {
 
 }
 
+
+
+function updateDisplay() {
+
+    const selectedCategory = categoryFilter.value;
+
+    const expenses = selectedCategory === "All"
+
+        ? tracker.getExpenses()
+
+        : tracker.filterByCategory(selectedCategory);
+
+    displayExpenses(expenses);
+    const total = tracker.calculateTotal();
+
+    totalExpenses.textContent = `KES ${total.toFixed(2)}`;
+
+}
+
+
