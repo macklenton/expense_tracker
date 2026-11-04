@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
@@ -18,10 +19,10 @@
     <main>
 
         <!-- Add Expense Form -->
-        <section>
+        <section class="expense-form">
             <h2>Add New Expense</h2>
 
-            <form>
+            <form id="expense-form">
 
                 <label for="description">Description</label>
                 <input
@@ -58,17 +59,17 @@
         </section>
 
         <!-- Expense Summary -->
-        <section>
+        <section class="summary">
             <h2>Total Expenses</h2>
-            <p>KES 0.00</p>
+            <p id="total-expenses">KES 0.00</p>
         </section>
 
         <!-- Expense List -->
-        <section>
-            <div>
+        <section class="expenses">
+            <div class="expense-heading">
                 <h2>My Expenses</h2>
 
-                <select>
+                <select id="category-filter">
                     <option value="All">All Categories</option>
                     <option value="Food">Food</option>
                     <option value="Transport">Transport</option>
@@ -79,8 +80,8 @@
                 </select>
             </div>
 
-            <div>
-                <p>No expenses added yet.</p>
+            <div id="expense-list">
+                <p id="empty-state">No expenses added yet.</p>
             </div>
 
         </section>

@@ -1,0 +1,192 @@
+
+/* General Styling */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+
+header {
+    background-color: #245c43;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 14px;
+}
+
+/* Main Container */
+
+main {
+    width: 90%;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+/* Expense Form */
+
+.expense-form,
+.summary,
+.expenses {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input,
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #245c43;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #19432f;
+}
+
+/* Summary */
+
+.summary {
+    text-align: center;
+}
+
+.summary p {
+    color: #245c43;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Expenses Section */
+
+.expense-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.expense-heading h2 {
+    margin-bottom: 0;
+}
+
+.expense-heading select {
+    max-width: 170px;
+}
+
+/* Expense Items (Created using JavaScript) */
+
+#expense-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.expense-item h3 {
+    font-size: 15px;
+}
+
+.expense-item p {
+    font-size: 13px;
+    color: #666;
+}
+
+.delete-button {
+    background-color: #d9534f;
+    padding: 7px 10px;
+    font-size: 12px;
+}
+
+.delete-button:hover {
+    background-color: #b52b27;
+}
+
+#empty-state {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 13px;
+}
+
+/* Mobile Responsiveness */
+
+@media (max-width: 500px) {
+
+    main {
+        width: 95%;
+    }
+
+    .expense-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .expense-heading select {
+        width: 100%;
+        max-width: none;
+    }
+
+    .expense-item {
+        gap: 10px;
+    }
+}
