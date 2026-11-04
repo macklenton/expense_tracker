@@ -79,6 +79,7 @@ npm test
 ```
 ### 6. View Live URL 
 ```
+https://macklenton.github.io/expense_tracker/
 
 ```
 
