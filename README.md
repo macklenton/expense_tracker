@@ -51,7 +51,7 @@ Expense_tracker/
 ### 1. Clone the repository
 
 ```
-
+https://github.com/macklenton/expense_tracker.git
 ```
 
 ### 2. Navigate into the project folder
@@ -76,6 +76,10 @@ To execute the unit tests, run:
 
 ```
 npm test
+```
+### 6. View Live URL 
+```
+
 ```
 
 ## Unit Testing with Jest
@@ -117,5 +121,5 @@ Some features that could be added in future versions include:
 
 **Mack Lenton**
 
-Student Software Developer | Learning JavaScript and Software Engineering
+Student Software Developer Learning JavaScript and Software Engineering
 
